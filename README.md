@@ -1,6 +1,5 @@
 # Sudoku
-Given an sudoku puzzle, my program recursively checks for possible solutions 
-using a backtracking algorithm; displayed in a text-based grid. Example output:
+Given an sudoku puzzle, my program recursively checks for possible solutions using a backtracking algorithm; displayed in a text-based grid. Example output:
  ------- ------- -------
 | 8     |       |       | 
 |     3 | 6     |       | 
