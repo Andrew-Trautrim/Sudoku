@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this sudokulate file, choose Tools | Templates
- * and open the sudokulate in the editor.
- */
 
 /* 
  * File:   main.cpp
