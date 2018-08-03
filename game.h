@@ -11,10 +11,9 @@
 
 #include <iostream>
 
-using namespace std;
+static const int SIZE = 9;
 
-// global grid size variable
-#define N 9
+using namespace std;
 
 class Game {
 public:
@@ -27,7 +26,7 @@ public:
     
 private:
     
-    int grid[N][N];
+    int grid[SIZE][SIZE];
     
     bool check(int row, int column, int check);
     bool find_unused_location(int& row, int& column);
