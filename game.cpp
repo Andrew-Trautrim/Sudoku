@@ -4,9 +4,11 @@
 // initiates grid values to 0 incase of lingering digits
 void Game::init_grid()
 {
-    for(int y = 0; y < N; ++y)
-        for(int x = 0; x < N; ++x)
+    for(int y = 0; y < SIZE; ++y)
+        for(int x = 0; x < SIZE; ++x)
             grid[y][x] = 0;
+    
+    return;
 }
 
 // Loads example Sudoku game.
@@ -51,10 +53,10 @@ void Game::load_game()
 void Game::print_grid()
 {
     cout << " ------- ------- -------" << endl;
-    for(int y = 0; y < N; ++y)
+    for(int y = 0; y < SIZE; ++y)
     {
         cout << "| ";
-        for(int x = 0; x < N; ++x)
+        for(int x = 0; x < SIZE; ++x)
         {
             if(grid[y][x] == 0)
                 cout << "  ";
@@ -68,6 +70,8 @@ void Game::print_grid()
         if((y+1) % 3 == 0)
             cout << " ------- ------- -------" << endl;
     }
+    
+    return;
 }
 
 // recursive solve function
@@ -94,6 +98,7 @@ bool Game::solve()
             grid[row][column] = 0;
         }
     }
+    
     return false;
 }
 
@@ -101,12 +106,12 @@ bool Game::solve()
 bool Game::check(int row, int column, int test)
 {
     // check row for repeated instances
-    for(int i = 0; i < 9; ++i)
+    for(int i = 0; i < SIZE; ++i)
         if(grid[row][i] == test)
             return false;
     
     // check column for repeated instances
-    for(int i = 0; i < 9; ++i)
+    for(int i = 0; i < SIZE; ++i)
         if(grid[i][column] == test)
             return false;
     
@@ -122,8 +127,8 @@ bool Game::check(int row, int column, int test)
 // finds the first unused location, returns false otherwise
 bool Game::find_unused_location(int& row, int& column)
 {
-    for (row = 0; row < N; ++row)
-        for(column = 0; column < N; ++column)
+    for (row = 0; row < SIZE; ++row)
+        for(column = 0; column < SIZE; ++column)
             if(grid[row][column] == 0)
                 return true;
     
